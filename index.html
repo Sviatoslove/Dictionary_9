@@ -7,14 +7,19 @@
     <title>Document</title>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="fonts/Chococooky Fonts/stylesheet.css">
+    <link rel="stylesheet" href="fonts/ArturoTrial-HeavyOutline Fonts/stylesheet1.css">
     <link rel="stylesheet" href="fonts/ArturoTrial-HeavyOutline Fonts/stylesheet.css">
   </head>
   <body>
     <div class="container">
-      <div>
+      <div class="wrapper__label">
         <label>
           Слово:
           <input type="text" class="input-eng inputs" placeholder="Word">
+        </label>
+        <label>
+          Произношение:
+          <input type="text" class="input-acc inputs" placeholder="Произношение">
         </label>
         <label>
           Перевод:
@@ -24,7 +29,7 @@
       <button class="btn">
         Добавить слово в таблицу
       </button>
-      <table class="table" cellspacing="1">
+      <table class="table" cellspacing="3">
       </table>
     </div>
   <script src="main.js"></script>

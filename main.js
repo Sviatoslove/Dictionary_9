@@ -1,12 +1,17 @@
 const engInput = document.querySelector('.input-eng');
 const rusInput = document.querySelector('.input-rus');
+const accInput = document.querySelector('.input-acc')
 const inputs = document.querySelectorAll('.inputs');
 const saveButton = document.querySelector('.btn');
 const table = document.querySelector('.table');
 
 let words;
 
-localStorage.length < 1 ? words = [] : words = JSON.parse(localStorage.getItem('words'));
+if(!localStorage.getItem('words')) {
+    words = []
+} else {
+    words = JSON.parse(localStorage.getItem('words'));
+}
 
 let addWordToTable = index => {
     table.innerHTML += `
@@ -16,6 +21,9 @@ let addWordToTable = index => {
             </td>
             <td>
             ${words[index].englishWord}
+            </td>
+            <td>
+            ${words[index].accentWord}
             </td>
             <td>
             ${words[index].russianWord}
@@ -28,7 +36,7 @@ let addWordToTable = index => {
 };
 
 const getWordsLength = () => {
-    words.forEach((item, idx) => {
+    words?.forEach((item, idx) => {
         addWordToTable(idx);
     })
 }
@@ -36,41 +44,74 @@ const getWordsLength = () => {
 getWordsLength();
 
 class CreateWord {
-    constructor(englishWord, russianWord) {
+    constructor(englishWord, accentWord, russianWord) {
         this.englishWord = englishWord;
+        this.accentWord = accentWord;
         this.russianWord = russianWord;
     };
 };
 
-const enterButton = () => {
-    if(
-        rusInput.value.length < 1 ||
-        engInput.value.length < 1 ||
-        !isNaN(rusInput.value)    ||
-        !isNaN(engInput.value)
-    ) {
-        for(let key of inputs) {
-            key.classList.add('error');
-        }
-    } else {
-        for(let key of inputs) {
-            key.classList.remove('error');
+const checkMatch = () => {
+    for(let i = 0; i < words?.length; i++){
+        if(engInput.value === words[i].englishWord){
+            engInput.classList.add('error');
+            rusInput.value = '';
+            accInput.value = '';
+            engInput.value = '';
+            break;
+        }else{
+            engInput.classList.remove('error');
         };
-        words.push(new CreateWord(engInput.value, rusInput.value));
-        localStorage.setItem('words', JSON.stringify(words));
-        addWordToTable(words.length - 1);
-        rusInput.value = '';
-        engInput.value = '';
     };
 };
 
+
+const enterButton = () => {
+    if(
+        engInput.value.length < 1 ||
+        !isNaN(engInput.value)
+        ) {
+        console.log(1);
+        engInput.classList.add('error');
+        accInput.classList.remove('error');
+        rusInput.classList.remove('error');
+    } else if(
+        accInput.value.length < 1 ||
+        !isNaN(accInput.value)
+    ) {
+        console.log(2);
+        engInput.classList.remove('error');
+        accInput.classList.add('error');
+        rusInput.classList.remove('error');
+    }else if(rusInput.value.length < 1 ||
+        !isNaN(rusInput.value)
+    ) {
+        console.log(3);
+        engInput.classList.remove('error');
+        accInput.classList.remove('error');
+        rusInput.classList.add('error');
+    }else {
+        for(let key of inputs) {
+            key.classList.remove('error');
+        };
+        words.push(new CreateWord(engInput.value, accInput.value, rusInput.value));
+        localStorage.setItem('words', JSON.stringify(words));
+        addWordToTable(words.length - 1);                                  
+    };
+    rusInput.value = '';
+    accInput.value = '';
+    engInput.value = '';
+};
+
 saveButton.addEventListener('click', () => {
+    checkMatch();
     enterButton();
     deleteWord();
 });
 
 document.addEventListener('keydown', event => {
     if(event.keyCode === 13){
+        checkMatch();
         enterButton();
         deleteWord();
     }

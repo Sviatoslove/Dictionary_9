@@ -1,13 +1,204 @@
 @font-face {
     font-family: 'Arturo Trial';
+    src: url('ArturoTrial-ExtraBoldItalic.eot');
+    src: local('Arturo Trial ExtraBold Italic'), local('ArturoTrial-ExtraBoldItalic'),
+        url('ArturoTrial-ExtraBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('ArturoTrial-ExtraBoldItalic.woff2') format('woff2'),
+        url('ArturoTrial-ExtraBoldItalic.woff') format('woff'),
+        url('ArturoTrial-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Arturo Trial';
+    src: url('ArturoTrial-HeavyItalic.eot');
+    src: local('Arturo Trial Heavy Italic'), local('ArturoTrial-HeavyItalic'),
+        url('ArturoTrial-HeavyItalic.eot?#iefix') format('embedded-opentype'),
+        url('ArturoTrial-HeavyItalic.woff2') format('woff2'),
+        url('ArturoTrial-HeavyItalic.woff') format('woff'),
+        url('ArturoTrial-HeavyItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Arturo Trial';
+    src: url('ArturoTrial-Light.eot');
+    src: local('Arturo Trial Light'), local('ArturoTrial-Light'),
+        url('ArturoTrial-Light.eot?#iefix') format('embedded-opentype'),
+        url('ArturoTrial-Light.woff2') format('woff2'),
+        url('ArturoTrial-Light.woff') format('woff'),
+        url('ArturoTrial-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arturo Trial';
     src: url('ArturoTrial-HeavyOutline.eot');
-    src: url('ArturoTrial-HeavyOutline.eot?#iefix') format('embedded-opentype'),
+    src: local('Arturo Trial Heavy Outline'), local('ArturoTrial-HeavyOutline'),
+        url('ArturoTrial-HeavyOutline.eot?#iefix') format('embedded-opentype'),
         url('ArturoTrial-HeavyOutline.woff2') format('woff2'),
         url('ArturoTrial-HeavyOutline.woff') format('woff'),
-        url('ArturoTrial-HeavyOutline.ttf') format('truetype'),
-        url('ArturoTrial-HeavyOutline.svg#ArturoTrial-HeavyOutline') format('svg');
+        url('ArturoTrial-HeavyOutline.ttf') format('truetype');
     font-weight: 900;
     font-style: normal;
-    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Arturo Trial';
+    src: url('ArturoTrial-Italic.eot');
+    src: local('Arturo Trial Italic'), local('ArturoTrial-Italic'),
+        url('ArturoTrial-Italic.eot?#iefix') format('embedded-opentype'),
+        url('ArturoTrial-Italic.woff2') format('woff2'),
+        url('ArturoTrial-Italic.woff') format('woff'),
+        url('ArturoTrial-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Arturo Demo';
+    src: url('ArturoDemo-Heavy.eot');
+    src: local('Arturo Demo Heavy'), local('ArturoDemo-Heavy'),
+        url('ArturoDemo-Heavy.eot?#iefix') format('embedded-opentype'),
+        url('ArturoDemo-Heavy.woff2') format('woff2'),
+        url('ArturoDemo-Heavy.woff') format('woff'),
+        url('ArturoDemo-Heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arturo Trial';
+    src: url('ArturoTrial-ThinItalic.eot');
+    src: local('Arturo Trial Thin Italic'), local('ArturoTrial-ThinItalic'),
+        url('ArturoTrial-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('ArturoTrial-ThinItalic.woff2') format('woff2'),
+        url('ArturoTrial-ThinItalic.woff') format('woff'),
+        url('ArturoTrial-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Arturo Trial';
+    src: url('ArturoTrial-ExtraLight.eot');
+    src: local('Arturo Trial ExtraLight'), local('ArturoTrial-ExtraLight'),
+        url('ArturoTrial-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('ArturoTrial-ExtraLight.woff2') format('woff2'),
+        url('ArturoTrial-ExtraLight.woff') format('woff'),
+        url('ArturoTrial-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arturo Trial';
+    src: url('ArturoTrial-ExtraBold.eot');
+    src: local('Arturo Trial ExtraBold'), local('ArturoTrial-ExtraBold'),
+        url('ArturoTrial-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('ArturoTrial-ExtraBold.woff2') format('woff2'),
+        url('ArturoTrial-ExtraBold.woff') format('woff'),
+        url('ArturoTrial-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arturo Trial';
+    src: url('ArturoTrial-ExtraLightItalic.eot');
+    src: local('Arturo Trial ExtraLight Italic'), local('ArturoTrial-ExtraLightItalic'),
+        url('ArturoTrial-ExtraLightItalic.eot?#iefix') format('embedded-opentype'),
+        url('ArturoTrial-ExtraLightItalic.woff2') format('woff2'),
+        url('ArturoTrial-ExtraLightItalic.woff') format('woff'),
+        url('ArturoTrial-ExtraLightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Arturo Trial';
+    src: url('ArturoTrial-LightItalic.eot');
+    src: local('Arturo Trial Light Italic'), local('ArturoTrial-LightItalic'),
+        url('ArturoTrial-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('ArturoTrial-LightItalic.woff2') format('woff2'),
+        url('ArturoTrial-LightItalic.woff') format('woff'),
+        url('ArturoTrial-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Arturo Trial';
+    src: url('ArturoTrial-Heavy.eot');
+    src: local('Arturo Trial Heavy'), local('ArturoTrial-Heavy'),
+        url('ArturoTrial-Heavy.eot?#iefix') format('embedded-opentype'),
+        url('ArturoTrial-Heavy.woff2') format('woff2'),
+        url('ArturoTrial-Heavy.woff') format('woff'),
+        url('ArturoTrial-Heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arturo Trial';
+    src: url('ArturoTrial-Bold.eot');
+    src: local('Arturo Trial Bold'), local('ArturoTrial-Bold'),
+        url('ArturoTrial-Bold.eot?#iefix') format('embedded-opentype'),
+        url('ArturoTrial-Bold.woff2') format('woff2'),
+        url('ArturoTrial-Bold.woff') format('woff'),
+        url('ArturoTrial-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arturo Demo';
+    src: url('ArturoDemo-Heavyoutline.eot');
+    src: local('Arturo Demo Heavy outline'), local('ArturoDemo-Heavyoutline'),
+        url('ArturoDemo-Heavyoutline.eot?#iefix') format('embedded-opentype'),
+        url('ArturoDemo-Heavyoutline.woff2') format('woff2'),
+        url('ArturoDemo-Heavyoutline.woff') format('woff'),
+        url('ArturoDemo-Heavyoutline.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arturo Trial';
+    src: url('ArturoTrial-Thin.eot');
+    src: local('Arturo Trial Thin'), local('ArturoTrial-Thin'),
+        url('ArturoTrial-Thin.eot?#iefix') format('embedded-opentype'),
+        url('ArturoTrial-Thin.woff2') format('woff2'),
+        url('ArturoTrial-Thin.woff') format('woff'),
+        url('ArturoTrial-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arturo Trial';
+    src: url('ArturoTrial-Regular.eot');
+    src: local('Arturo Trial Regular'), local('ArturoTrial-Regular'),
+        url('ArturoTrial-Regular.eot?#iefix') format('embedded-opentype'),
+        url('ArturoTrial-Regular.woff2') format('woff2'),
+        url('ArturoTrial-Regular.woff') format('woff'),
+        url('ArturoTrial-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arturo Trial';
+    src: url('ArturoTrial-BoldItalic.eot');
+    src: local('Arturo Trial Bold Italic'), local('ArturoTrial-BoldItalic'),
+        url('ArturoTrial-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('ArturoTrial-BoldItalic.woff2') format('woff2'),
+        url('ArturoTrial-BoldItalic.woff') format('woff'),
+        url('ArturoTrial-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
 }
 
