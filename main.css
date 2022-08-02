@@ -10,9 +10,7 @@ body {
   text-align: center;
 }
 .error {
-  -webkit-box-shadow: 0px 5px 10px 2px rgba(247, 0, 0, 0.39) inset;
-  -moz-box-shadow: 0px 5px 10px 2px rgba(247, 0, 0, 0.39) inset;
-  box-shadow: 0px 5px 10px 2px rgba(247, 0, 0, 0.39) inset;
+  border: 2px solid red;
 }
 table {
   margin: 20px auto 0;
@@ -26,9 +24,6 @@ td {
   border-radius: 10px;
   border: 1px solid rgb(115, 115, 85);
   color: rgb(42, 81, 165);
-  -webkit-box-shadow: 0px 5px 10px 2px rgba(0, 247, 128, 0.1) inset;
-  -moz-box-shadow: 0px 5px 10px 2px rgba(0, 247, 128, 0.1) inset;
-  box-shadow: 0px 5px 10px 2px rgba(0, 247, 128, 0.1) inset;
   -webkit-box-shadow: 1px 2px 4px 1px rgba(34, 60, 80, 0.75);
   -moz-box-shadow: 1px 2px 4px 1px rgba(34, 60, 80, 0.75);
   box-shadow: 1px 2px 4px 1px rgba(34, 60, 80, 0.75);
@@ -57,8 +52,6 @@ td {
   -webkit-box-shadow: 1px 2px 4px 1px rgba(34, 60, 80, 0.75);
   -moz-box-shadow: 1px 2px 4px 1px rgba(34, 60, 80, 0.75);
   box-shadow: 1px 2px 4px 1px rgba(34, 60, 80, 0.75);
-  justify-content: space-between;
-
 }
 .btn:hover, .delete:hover {
   border: 1px solid #7fffd4;

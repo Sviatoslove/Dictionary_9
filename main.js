@@ -54,6 +54,8 @@ class CreateWord {
 const checkMatch = () => {
     for(let i = 0; i < words?.length; i++){
         if(engInput.value === words[i].englishWord){
+            console.log(1);
+            
             engInput.classList.add('error');
             rusInput.value = '';
             accInput.value = '';
@@ -91,6 +93,8 @@ const enterButton = () => {
         accInput.classList.remove('error');
         rusInput.classList.add('error');
     }else {
+        console.log(4);
+        
         for(let key of inputs) {
             key.classList.remove('error');
         };
