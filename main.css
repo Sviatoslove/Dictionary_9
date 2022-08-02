@@ -82,7 +82,7 @@ label {
 .calc {
   position: absolute;
   top: -26px;
-  right: 33px;
+  right: 0;
   width: 25px;
   background-color: transparent;
   -webkit-box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.4) inset;
@@ -95,6 +95,11 @@ label {
   padding: 5px 0 0 1px;
   border-radius: 10px;
 }
-.dictionary__table {
+.wrapper__table {
+  max-width: 345px;
   position: relative;
+  margin: 0 auto;
+}
+.none {
+  display: none;
 }

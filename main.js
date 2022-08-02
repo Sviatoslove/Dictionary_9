@@ -36,17 +36,22 @@ let addWordToTable = index => {
     `
 };
 
-const calcWords = () => {
-    words?.forEach((item, idx) => {
-        calc.innerHTML = idx + 1;
-    });
+const calcWord = () => {
+    if(words.length < 1) {
+        calc.classList.add('none');
+    }else {
+        words?.forEach((item, idx) => {
+            calc.classList.remove('none');
+            calc.innerHTML = idx + 1;
+        });
+    };
 };
 
 const getWordsLength = () => {
     words?.forEach((item, idx) => {
-        calc.innerHTML = idx + 1;
         addWordToTable(idx);
     })
+    calcWord();
 }
 
 getWordsLength();
@@ -79,7 +84,6 @@ const enterButton = () => {
         engInput.value.length < 1 ||
         !isNaN(engInput.value)
         ) {
-        console.log(1);
         engInput.classList.add('error');
         accInput.classList.remove('error');
         rusInput.classList.remove('error');
@@ -87,27 +91,23 @@ const enterButton = () => {
         accInput.value.length < 1 ||
         !isNaN(accInput.value)
     ) {
-        console.log(2);
         engInput.classList.remove('error');
         accInput.classList.add('error');
         rusInput.classList.remove('error');
     }else if(rusInput.value.length < 1 ||
         !isNaN(rusInput.value)
     ) {
-        console.log(3);
         engInput.classList.remove('error');
         accInput.classList.remove('error');
         rusInput.classList.add('error');
     }else {
-        console.log(4);
-        
         for(let key of inputs) {
             key.classList.remove('error');
         };
         words.push(new CreateWord(engInput.value, accInput.value, rusInput.value));
         localStorage.setItem('words', JSON.stringify(words));
         addWordToTable(words.length - 1);
-        calc.innerHTML = words.length;                                  
+        calcWord();
     };
     rusInput.value = '';
     accInput.value = '';
