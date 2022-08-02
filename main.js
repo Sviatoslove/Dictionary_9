@@ -4,6 +4,7 @@ const accInput = document.querySelector('.input-acc')
 const inputs = document.querySelectorAll('.inputs');
 const saveButton = document.querySelector('.btn');
 const table = document.querySelector('.table');
+const calc = document.querySelector('.calc');
 
 let words;
 
@@ -35,8 +36,15 @@ let addWordToTable = index => {
     `
 };
 
+const calcWords = () => {
+    words?.forEach((item, idx) => {
+        calc.innerHTML = idx + 1;
+    });
+};
+
 const getWordsLength = () => {
     words?.forEach((item, idx) => {
+        calc.innerHTML = idx + 1;
         addWordToTable(idx);
     })
 }
@@ -54,8 +62,6 @@ class CreateWord {
 const checkMatch = () => {
     for(let i = 0; i < words?.length; i++){
         if(engInput.value === words[i].englishWord){
-            console.log(1);
-            
             engInput.classList.add('error');
             rusInput.value = '';
             accInput.value = '';
@@ -100,7 +106,8 @@ const enterButton = () => {
         };
         words.push(new CreateWord(engInput.value, accInput.value, rusInput.value));
         localStorage.setItem('words', JSON.stringify(words));
-        addWordToTable(words.length - 1);                                  
+        addWordToTable(words.length - 1);
+        calc.innerHTML = words.length;                                  
     };
     rusInput.value = '';
     accInput.value = '';
