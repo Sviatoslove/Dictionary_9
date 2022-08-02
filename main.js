@@ -71,6 +71,7 @@ const checkMatch = () => {
             rusInput.value = '';
             accInput.value = '';
             engInput.value = '';
+            alert('Такое слово уже есть в словаре. Зачем вам одинаковые слова, введите пожалуйста другое слово.')
             break;
         }else{
             engInput.classList.remove('error');
@@ -78,15 +79,19 @@ const checkMatch = () => {
     };
 };
 
+const attention = 'Одно из полей ввода пустое или введено число.Пожалуйста введите слова соответственно с их значениями в одноимённые поля.';
 
 const enterButton = () => {
-    if(
+    if(engInput.classList.contains('error')){
+        engInput.classList.remove('error');
+    }else if(
         engInput.value.length < 1 ||
         !isNaN(engInput.value)
         ) {
         engInput.classList.add('error');
         accInput.classList.remove('error');
         rusInput.classList.remove('error');
+        alert(attention);
     } else if(
         accInput.value.length < 1 ||
         !isNaN(accInput.value)
@@ -94,12 +99,14 @@ const enterButton = () => {
         engInput.classList.remove('error');
         accInput.classList.add('error');
         rusInput.classList.remove('error');
+        alert(attention);
     }else if(rusInput.value.length < 1 ||
         !isNaN(rusInput.value)
     ) {
         engInput.classList.remove('error');
         accInput.classList.remove('error');
         rusInput.classList.add('error');
+        alert(attention);
     }else {
         for(let key of inputs) {
             key.classList.remove('error');
