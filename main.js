@@ -15,25 +15,17 @@ if(!localStorage.getItem('words')) {
 }
 
 let addWordToTable = index => {
-    table.innerHTML += `
-        <tr>
-            <td>
-            ${index + 1}
-            </td>
-            <td>
-            ${words[index].englishWord}
-            </td>
-            <td>
-            ${words[index].accentWord}
-            </td>
-            <td>
-            ${words[index].russianWord}
-            </td>
-            <td class="delete">
-            ❌
-            </td>
-        </tr>
-    `
+    let arrTable = [index + 1, words[index].englishWord, words[index].accentWord, words[index].russianWord, `❌`];
+    let tr = document.createElement(`tr`);
+    table.prepend(tr);
+    arrTable.forEach((item, idx) => {
+        let td = document.createElement('td');
+        td.innerHTML = item;
+        tr.append(td);
+        if(idx === 4) {
+            td.classList.add('delete', `${index}`);
+        };
+    });
 };
 
 const calcWord = () => {
@@ -48,7 +40,7 @@ const calcWord = () => {
 };
 
 const getWordsLength = () => {
-    words?.forEach((item, idx) => {
+    words.forEach((item, idx) => {
         addWordToTable(idx);
     })
     calcWord();
@@ -122,34 +114,31 @@ const enterButton = () => {
 };
 
 saveButton.addEventListener('click', () => {
-    checkMatch();
+    // checkMatch();
     enterButton();
-    deleteWord();
 });
 
 document.addEventListener('keydown', event => {
     if(event.keyCode === 13){
         checkMatch();
         enterButton();
-        deleteWord();
-    }
+    };
 });
 
-const deleteWord = () => {
-    let deleteButtons = document.querySelectorAll('.delete');
-    for(let i = 0; i < deleteButtons.length; i++){
-        deleteButtons[i].addEventListener('click', () => {
-            words.forEach((item, idx) => {
-                if(idx === i) {
-                    words.splice(idx, 1);
-                    localStorage.setItem('words', JSON.stringify(words));
-                    table.innerHTML = ``;
-                    getWordsLength();
-                };
-            });
-            deleteWord();
+table.addEventListener('click', event => {
+    let deleteButtons = Array.from(document.querySelectorAll('.delete'));
+    if(event.target.classList.contains('delete')){
+        deleteButtons.forEach((btn, i) => {
+            if(btn === event.target) {
+                words.forEach((obj, idx) => {
+                    if(deleteButtons[i].classList.contains(`${idx}`)) {
+                        words.splice(idx, 1);
+                        localStorage.setItem('words', JSON.stringify(words));
+                        table.innerHTML = ``;
+                        getWordsLength();
+                    };
+                });
+            };
         });
     };
-};
-
-deleteWord();
+});
