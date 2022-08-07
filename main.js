@@ -5,11 +5,14 @@ const inputs = document.querySelectorAll('.inputs');
 const saveButton = document.querySelector('.btn');
 const table = document.querySelector('.table');
 const calc = document.querySelector('.calc');
+const scrollTable = document.querySelector('.scroll-table-body');
+
 
 let words;
 
 if(!localStorage.getItem('words')) {
-    words = []
+    words = [];
+    scrollTable.style.display = 'none';
 } else {
     words = JSON.parse(localStorage.getItem('words'));
 }
@@ -18,6 +21,7 @@ let addWordToTable = index => {
     let arrTable = [index + 1, words[index].englishWord, words[index].accentWord, words[index].russianWord, `❌`];
     let tr = document.createElement(`tr`);
     table.prepend(tr);
+    scrollTable.style.display = 'block';
     arrTable.forEach((item, idx) => {
         let td = document.createElement('td');
         td.innerHTML = item;
@@ -42,7 +46,8 @@ const calcWord = () => {
 const getWordsLength = () => {
     words.forEach((item, idx) => {
         addWordToTable(idx);
-    })
+    });
+    words.length === 0 ? scrollTable.style.display = 'none':     scrollTable.style.display = 'block';
     calcWord();
 }
 
@@ -107,14 +112,14 @@ const enterButton = () => {
         localStorage.setItem('words', JSON.stringify(words));
         addWordToTable(words.length - 1);
         calcWord();
+        rusInput.value = '';
+        accInput.value = '';
+        engInput.value = '';
     };
-    rusInput.value = '';
-    accInput.value = '';
-    engInput.value = '';
 };
 
 saveButton.addEventListener('click', () => {
-    // checkMatch();
+    checkMatch();
     enterButton();
 });
 
@@ -142,3 +147,17 @@ table.addEventListener('click', event => {
         });
     };
 });
+
+// const options = {
+// 	method: 'GET',
+// 	headers: {
+// 		'Accept-Encoding': 'application/gzip',
+// 		'X-RapidAPI-Key': '36c003649fmsh9b5765bce9690fdp1673b1jsn189d44e68fba',
+// 		'X-RapidAPI-Host': 'google-translate1.p.rapidapi.com'
+// 	}
+// };
+
+// fetch('https://google-translate1.p.rapidapi.com/language/translate/v2/languages', options)
+// 	.then(response => response.json())
+// 	.then(response => console.log(response))
+// 	.catch(err => console.error(err));
