@@ -119,7 +119,7 @@ const enterButton = () => {
 };
 
 saveButton.addEventListener('click', () => {
-    checkMatch();
+    // checkMatch();
     enterButton();
 });
 
@@ -148,16 +148,16 @@ table.addEventListener('click', event => {
     };
 });
 
-// const options = {
-// 	method: 'GET',
-// 	headers: {
-// 		'Accept-Encoding': 'application/gzip',
-// 		'X-RapidAPI-Key': '36c003649fmsh9b5765bce9690fdp1673b1jsn189d44e68fba',
-// 		'X-RapidAPI-Host': 'google-translate1.p.rapidapi.com'
-// 	}
-// };
+const options = {
+	method: 'GET',
+	headers: {
+		'Accept-Encoding': 'application/gzip',
+		'X-RapidAPI-Key': '36c003649fmsh9b5765bce9690fdp1673b1jsn189d44e68fba',
+		'X-RapidAPI-Host': 'google-translate1.p.rapidapi.com'
+	}
+};
 
-// fetch('https://google-translate1.p.rapidapi.com/language/translate/v2/languages', options)
-// 	.then(response => response.json())
-// 	.then(response => console.log(response))
-// 	.catch(err => console.error(err));
+fetch('https://google-translate1.p.rapidapi.com/language/translate/v2/languages', options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
