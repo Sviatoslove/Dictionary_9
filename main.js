@@ -47,7 +47,7 @@ const getWordsLength = () => {
     words.forEach((item, idx) => {
         addWordToTable(idx);
     });
-    words.length === 0 ? scrollTable.style.display = 'none':     scrollTable.style.display = 'block';
+    words.length === 0 ? scrollTable.style.display = 'none': scrollTable.style.display = 'block';
     calcWord();
 }
 
@@ -147,17 +147,3 @@ table.addEventListener('click', event => {
         });
     };
 });
-
-// const options = {
-// 	method: 'GET',
-// 	headers: {
-// 		'Accept-Encoding': 'application/gzip',
-// 		'X-RapidAPI-Key': '36c003649fmsh9b5765bce9690fdp1673b1jsn189d44e68fba',
-// 		'X-RapidAPI-Host': 'google-translate1.p.rapidapi.com'
-// 	}
-// };
-
-// fetch('https://google-translate1.p.rapidapi.com/language/translate/v2/languages', options)
-// 	.then(response => response.json())
-// 	.then(response => console.log(response))
-// 	.catch(err => console.error(err));

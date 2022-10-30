@@ -113,6 +113,6 @@ label {
   display: none;
 }
 .scroll-table-body {
-  overflow-y: scroll;
+  overflow-y: auto;
   height: 700px;
 }
